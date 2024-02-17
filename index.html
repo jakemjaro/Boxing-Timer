@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Boxing Timer</title>
 </head>
 <body>
-    <div class="main-container">
-        <div class="menu">
-            <select name="rounds" id="rounds"></select>
-            <select name="round-length" id="round-length"></select>
-            <select name="break-length" id="break-length"></select>
+    <div class="page-container">
+        <div class="timer-container">
+            <div class="menu">
+                <div>
+                    <span>Rounds:</span>
+                    <select name="num-rounds" id="num-rounds"></select>
+                </div>
+
+                <div>
+                    <span>Duration (min):</span>
+                    <select name="round-length" id="round-length"></select>
+                </div>
+
+                <div>
+                    <span>Break (min):</span>
+                    <select name="break-length" id="break-length"></select>
+                </div>
+            </div>
+            <div class="clock"></div>
+            <div class="controls">
+                <i class='bx bx-play-circle'></i>
+                <i class='bx bx-pause-circle inactive'></i>
+                <span>reset</span>
+            </div>
         </div>
-        <div class="clock"></div>
-        <div class="controls"></div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
