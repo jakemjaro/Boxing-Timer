@@ -17,11 +17,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(#0a0a0a, #5c5c5d);
+    background: linear-gradient(#191919, #2f2f30);
 }
 
 .timer-container {
-    height: 400px;
+    height: 460px;
     width: 800px;
     background: #141414;
     border-radius: 20px;
@@ -35,18 +35,20 @@ body {
     box-shadow: 0 4px 4px 10px rgba(250, 0, 0, 0.3);
 }
 
+.in-break {
+    box-shadow: 0 4px 4px 10px rgba(0,0,250,0.3);
+}
+
 .menu {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-basis: 4rem;
     gap: 2rem;
-    flex-grow: 1;
+    height: 20%;
 }
 
 .menu div {
     font-size: 1.5rem;
-    border-bottom: 0.5px solid #f1f1f1;
 }
 
 .menu div:hover {
@@ -54,13 +56,13 @@ body {
 }
 
 select {
-    background-color: transparent;
+    background-color: #2d2d2d;
     border: none;
     color: #f1f1f1;
     font-size: inherit;
     font-weight: 800;
     border-radius: 8px;
-    padding: 2px 5px;
+    padding: 4px 6px;
 }
 
 select:hover {
@@ -68,21 +70,28 @@ select:hover {
 }
 
 .clock {
-    height: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 15rem;
     font-weight: 500;
+    height: 50%;
+}
+
+.current-round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    height: 10%;
 }
 
 .controls {
-    flex-basis: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    flex-grow: 1;
+    height: 20%;
 }
 
 .controls i {

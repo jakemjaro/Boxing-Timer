@@ -6,15 +6,17 @@ const playButton = document.querySelector('.bx-play-circle');
 const pauseButton = document.querySelector('.bx-pause-circle');
 const reset = document.querySelector('.controls span');
 const timerContainer = document.querySelector('.timer-container');
+const roundSpan = document.querySelector('.current-round span');
 let roundTime = 3*60;
 let breakTime = 1*60;
 let numRounds = 12;
 let inter;
 let breakInter;
 let duringRound = true;
+let currentRound = 1;
 
 const initializeMenu = () => {
-    for (let i = 1; i <= 36; i++) {
+    for (let i = 1; i <= 12; i++) {
         if (i === 12) {
             numRoundsDropdown.innerHTML += `<option value="${i}" selected>${i}</option>`;
         } else {
@@ -62,7 +64,9 @@ breakLengthDropdown.addEventListener('change', (event) => {
 
 function fight() {
     duringRound = true;
+    timerContainer.classList?.remove("in-break");
     timerContainer.classList.add("in-round");
+    roundSpan.innerHTML = currentRound++;
     inter = setInterval(async () => {
         roundTime--;
         setClockDisplay(roundTime);
@@ -82,6 +86,7 @@ function fight() {
 function rest() {
     duringRound = false;
     timerContainer.classList?.remove("in-round");
+    timerContainer.classList.add("in-break");
     breakInter = setInterval(() => {
         breakTime--;
         setClockDisplay(breakTime);
@@ -114,6 +119,8 @@ function resetTimer() {
     breakTime = breakLengthDropdown.value * 60;
     roundTime = roundLengthDropdown.value * 60;
     numRounds = numRoundsDropdown.value;
+    currentRound = 1;
+    roundSpan.innerHTML = "";
     setClockDisplay(roundTime);
     pause();
     duringRound = true;
@@ -121,10 +128,10 @@ function resetTimer() {
         pauseToPlayButton();
     }
     timerContainer.classList?.remove("in-round");
+    timerContainer.classList?.remove("in-break");
 }
 
 playButton.addEventListener('click', () => {
-    
     if (numRounds > 0) {
         playToPauseButton();
         if (duringRound) {
