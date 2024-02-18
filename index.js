@@ -146,6 +146,7 @@ pauseButton.addEventListener('click', () => {
     pauseToPlayButton();
     pause();
     timerContainer.classList?.remove("in-round");
+    timerContainer.classList?.remove("in-break");
 });
 
 reset.addEventListener('click', resetTimer);
