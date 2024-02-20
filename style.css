@@ -74,7 +74,7 @@ select:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15rem;
+    font-size: 14rem;
     font-weight: 500;
     height: 50%;
 }
@@ -111,4 +111,43 @@ select:hover {
 
 i.inactive {
     display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .timer-container {
+        max-width: 90%;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        gap: 1rem;
+    }
+    
+    .menu div {
+        font-size: 1.2rem;
+    }
+    
+    .clock {
+        font-size: 10rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .clock {
+        font-size: 6rem;
+    }
+
+    .current-round {
+        font-size: 1rem;
+    }
+
+    .controls i {
+        font-size: 2.5rem;
+    }
+
+    .controls span {
+        font-size: 1.1rem;
+    }
 }
